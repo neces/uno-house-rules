@@ -1,3 +1,4 @@
+import { useEffect, useMemo } from 'react';
 import type { SetupContent } from '../types/rules';
 
 /** Cycle through the four Uno colours so consecutive bullets never match. */
@@ -8,11 +9,36 @@ const BULLET_BG_CYCLE = [
   'bg-uno-blue',
 ] as const;
 
+/** Holds one shuffled permutation between Setup mounts (Strict Mode–safe). */
+let bulletPermutationCache: string[] | null = null;
+
+function takeShuffledBulletCycle(): readonly string[] {
+  if (!bulletPermutationCache) {
+    const arr = [...BULLET_BG_CYCLE];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = arr[i]!;
+      arr[i] = arr[j]!;
+      arr[j] = t;
+    }
+    bulletPermutationCache = arr;
+  }
+  return bulletPermutationCache;
+}
+
 export function SetupSheet({ content }: { content: SetupContent }) {
+  const cycle = useMemo(() => takeShuffledBulletCycle(), []);
+
+  useEffect(() => {
+    return () => {
+      bulletPermutationCache = null;
+    };
+  }, []);
+
   /** Running index: section heading dots and every list bullet share one sequence top-to-bottom. */
   let bulletOrdinal = 0;
   const nextBulletBg = () =>
-    BULLET_BG_CYCLE[bulletOrdinal++ % BULLET_BG_CYCLE.length];
+    cycle[bulletOrdinal++ % cycle.length]!;
 
   return (
     <article className="rule-sheet space-y-10 sm:space-y-12">
