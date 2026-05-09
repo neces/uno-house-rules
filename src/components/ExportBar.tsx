@@ -63,12 +63,12 @@ export function ExportBar({ targetRef, filenameSlug }: ExportBarProps) {
     <div
       className={[
         'no-print',
-        // Sticky on mobile, inline on md+
-        'sticky bottom-0 left-0 right-0 z-30 md:static md:mt-12',
+        // Sticky to viewport bottom across all sizes
+        'fixed bottom-0 left-0 right-0 z-30',
         'pb-safe',
       ].join(' ')}
     >
-      <div className="md:max-w-3xl md:mx-auto px-4 sm:px-6 py-3 md:py-4 flex items-center justify-end gap-3 bg-paper/95 backdrop-blur-sm md:bg-transparent border-t-2 border-ink/10 md:border-0">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex items-center justify-end gap-3 bg-paper/95 backdrop-blur-sm border-t-2 border-ink/10">
         <button
           type="button"
           onClick={handleDownload}

@@ -34,7 +34,7 @@ export default function App() {
 
       <Tabs active={tab} onChange={setTab} />
 
-      <main className="flex-1 px-4 sm:px-6 pt-6 sm:pt-10 pb-32 md:pb-10">
+      <main className="flex-1 px-4 sm:px-6 pt-6 sm:pt-10 pb-28">
         <div className="max-w-3xl mx-auto">
           {tab === 'setup' && <SetupPage />}
           {tab === 'official' && <OfficialPage />}
@@ -42,10 +42,6 @@ export default function App() {
           {tab === 'custom' && <CustomPage />}
         </div>
       </main>
-
-      <footer className="no-print py-6 text-center font-marker text-ink-muted text-sm">
-        Built with whimsy. PNG &amp; print export included. Custom selections live in this tab&apos;s sessionStorage.
-      </footer>
     </div>
   );
 }
