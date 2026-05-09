@@ -43,7 +43,7 @@ export function SetupSheet({ content }: { content: SetupContent }) {
             <header className="mb-3">
               <h2
                 id={`setup-${section.id}`}
-                className="zine-title wobble-underline text-2xl sm:text-3xl text-ink"
+                className="zine-title wobble-underline w-fit max-w-full text-2xl sm:text-3xl text-ink"
               >
                 <span
                   aria-hidden

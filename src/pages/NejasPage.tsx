@@ -17,7 +17,7 @@ export function NejasPage() {
           <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-blue">
             {preset.name}
           </h1>
-          <p className="mt-2 font-marker text-ink-soft tracking-wide">
+          <p className="no-print mt-2 font-marker text-ink-soft tracking-wide">
             Rules I force my friends to play, strategic but fast paced.
           </p>
         </header>

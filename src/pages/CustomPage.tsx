@@ -107,7 +107,7 @@ export function CustomPage() {
               className="block w-full min-w-0 bg-transparent font-inherit text-inherit tracking-inherit leading-[0.95] m-0 border-0 p-0 shadow-none outline-none appearance-none rounded-none caret-uno-green placeholder:text-uno-green/40 focus-visible:bg-paper/60 focus-visible:rounded-md [field-sizing:content]"
             />
           </h1>
-          <p className="mt-2 font-marker text-ink-soft tracking-wide">
+          <p className="no-print mt-2 font-marker text-ink-soft tracking-wide">
             Make your own rules, pick a good name. Auto-saves for the session.
           </p>
 

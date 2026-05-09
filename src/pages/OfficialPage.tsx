@@ -17,7 +17,7 @@ export function OfficialPage() {
           <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-red">
             {preset.name}
           </h1>
-          <p className="mt-2 font-marker text-ink-soft tracking-wide">
+          <p className="no-print mt-2 font-marker text-ink-soft tracking-wide">
             Official rule set, as Mattel intended.
           </p>
         </header>

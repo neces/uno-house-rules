@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { AccentColor, RuleOption } from '../types/rules';
+import { DeleteRuleDialog } from './DeleteRuleDialog';
 
 const ACCENT: Record<
   AccentColor,
@@ -65,6 +66,7 @@ export function RuleOptionCard({
 
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(option.text);
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -221,7 +223,7 @@ export function RuleOptionCard({
               type="button"
               onClick={e => {
                 e.stopPropagation();
-                if (confirm('Delete this rule?')) onDelete?.();
+                setConfirmDelete(true);
               }}
               aria-label="Delete"
               className={[
@@ -244,6 +246,18 @@ export function RuleOptionCard({
             </button>
           )}
         </div>
+      )}
+
+      {canDelete && (
+        <DeleteRuleDialog
+          open={confirmDelete}
+          previewText={option.text}
+          onCancel={() => setConfirmDelete(false)}
+          onConfirm={() => {
+            onDelete?.();
+            setConfirmDelete(false);
+          }}
+        />
       )}
     </div>
   );
