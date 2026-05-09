@@ -18,7 +18,7 @@ export function OfficialPage() {
             {preset.name}
           </h1>
           <p className="mt-2 font-marker text-ink-soft tracking-wide">
-            Mattel's official rule set, ticked from the master library.
+            Mattel's official rule set, nicked from the master library.
           </p>
         </header>
         <Checklist library={lib} selectedIds={preset.selectedIds} />
