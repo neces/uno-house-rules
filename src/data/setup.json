@@ -2,13 +2,6 @@
   "title": "How to Play",
   "sections": [
     {
-      "id": "winning",
-      "heading": "Winning",
-      "items": [
-        "Be the first player to get rid of all your cards"
-      ]
-    },
-    {
       "id": "players_deck",
       "heading": "Players & Deck",
       "items": [
@@ -50,6 +43,13 @@
       "heading": "Calling \"UNO\"",
       "items": [
         "When you play your second-to-last card, yell \"UNO!\". The penalty for forgetting is configurable in the rule library"
+      ]
+    },
+    {
+      "id": "winning",
+      "heading": "Winning",
+      "items": [
+        "Be the first player to get rid of all your cards"
       ]
     },
     {
