@@ -16,7 +16,7 @@ export default function App() {
           <div>
             <h1 className="zine-title text-[clamp(2.5rem,10vw,5rem)] leading-none">
               <span className="inline-block text-uno-red -rotate-[3deg]">U</span>
-              <span className="inline-block text-uno-yellow-deep">N</span>
+              <span className="inline-block text-uno-yellow">N</span>
               <span className="inline-block text-uno-green rotate-[3deg]">O</span>
             </h1>
             <p className="font-marker text-ink-soft tracking-wide mt-1">
