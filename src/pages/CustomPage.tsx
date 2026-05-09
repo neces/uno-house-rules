@@ -128,7 +128,7 @@ export function CustomPage() {
             <button
               type="button"
               onClick={() => handleReset('nejas')}
-              className="min-h-[40px] px-3 py-2 rounded-md border-2 border-uno-black text-uno-black bg-uno-yellow font-marker tracking-wide hover:-rotate-1 hover:shadow-[3px_3px_0_rgba(0,0,0,0.25)] transition-all"
+              className="min-h-[40px] px-3 py-2 rounded-md border-2 border-uno-blue text-uno-blue bg-paper/70 font-marker tracking-wide hover:bg-uno-blue hover:text-paper transition-colors"
             >
               Reset to Neja's
             </button>

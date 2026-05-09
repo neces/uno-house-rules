@@ -30,9 +30,9 @@ const TABS: TabSpec[] = [
     id: 'nejas',
     label: "Neja's",
     glyph: 'N',
-    bg: 'bg-uno-yellow',
-    text: 'text-uno-black',
-    border: 'border-uno-black',
+    bg: 'bg-uno-blue',
+    text: 'text-paper',
+    border: 'border-uno-blue',
   },
   {
     id: 'custom',

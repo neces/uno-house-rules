@@ -15,7 +15,7 @@ const ACCENT: Record<
   yellow: {
     bg: 'bg-uno-yellow',
     border: 'border-uno-yellow',
-    text: 'text-uno-yellow',
+    text: 'text-uno-yellow-deep',
     ring: 'ring-uno-yellow/40',
     soft: 'bg-uno-yellow/10',
   },
