@@ -12,7 +12,7 @@ export default function App() {
   return (
     <div className="min-h-dvh flex flex-col">
       <header className="no-print pt-6 sm:pt-10 pb-2 sm:pb-4 px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto flex items-end justify-between gap-4">
+        <div className="max-w-3xl mx-auto flex items-start justify-between gap-4">
           <div>
             <h1 className="zine-title text-[clamp(2.5rem,10vw,5rem)] leading-none">
               <span className="inline-block text-uno-red -rotate-[3deg]">U</span>
@@ -25,7 +25,7 @@ export default function App() {
           </div>
           <div
             aria-hidden
-            className="hidden sm:grid place-items-center w-16 h-20 rounded-lg bg-uno-black -rotate-12 shadow-[4px_4px_0_rgba(0,0,0,0.25)]"
+            className="hidden sm:grid place-items-center w-16 h-20 rounded-lg bg-ink-soft -rotate-12 shadow-[4px_4px_0_rgba(0,0,0,0.25)]"
           >
             <span className="font-zine text-paper text-xl">+4</span>
           </div>
