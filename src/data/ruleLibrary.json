@@ -26,7 +26,7 @@
       "id": "stacking",
       "heading": "Stacking draw cards",
       "exclusive": true,
-      "accentColor": "yellow",
+      "accentColor": "green",
       "options": [
         { "id": "stacking.off", "text": "Off: Draw Twos and Wild Draw Fours take effect immediately; the targeted player cannot defend (official)." },
         { "id": "stacking.plus2_only", "text": "Stack +2 on +2 only (any colour). The count accumulates and passes until someone can't defend." },
@@ -38,7 +38,7 @@
       "id": "wd4",
       "heading": "Wild Draw Four restriction",
       "exclusive": true,
-      "accentColor": "green",
+      "accentColor": "blue",
       "options": [
         { "id": "wd4.restricted", "text": "May only be played if you have no matching colour. Opponent may challenge — caught cheating draws 4, wrong challenge draws 6 (official)." },
         { "id": "wd4.unrestricted", "text": "No restriction, no challenge — play it whenever." }
@@ -48,7 +48,7 @@
       "id": "mustplay",
       "heading": "Must you play if you can?",
       "exclusive": true,
-      "accentColor": "blue",
+      "accentColor": "yellow",
       "options": [
         { "id": "mustplay.required", "text": "Must play a card if you have one playable (official)." },
         { "id": "mustplay.optional", "text": "You may choose to draw even when you can play." }
@@ -58,7 +58,7 @@
       "id": "afterdraw",
       "heading": "After you're forced to draw (+2 / +4)",
       "exclusive": true,
-      "accentColor": "blue",
+      "accentColor": "red",
       "options": [
         { "id": "afterdraw.skip", "text": "You draw the cards and lose your turn (official)." },
         { "id": "afterdraw.continue", "text": "You draw the cards, then your turn continues exactly as if you'd just begun a normal turn — you may play any playable card from your hand, or (if the must-play rule allows it) choose not to play and end your turn." }
@@ -78,7 +78,7 @@
       "id": "unopenalty",
       "heading": "Penalty for forgetting to call \"Uno\"",
       "exclusive": true,
-      "accentColor": "red",
+      "accentColor": "blue",
       "options": [
         { "id": "unopenalty.off", "text": "No penalty." },
         { "id": "unopenalty.2_window", "text": "Draw 2 cards, but only if called out before the next player plays their card (official)." },
@@ -89,7 +89,7 @@
       "id": "extras",
       "heading": "House rules & toggles",
       "exclusive": false,
-      "accentColor": "red",
+      "accentColor": "yellow",
       "options": [
         { "id": "extras.no_wild_finish", "text": "No-Wild finish: you cannot win the hand by playing a colourless card as your last card. No finishing on a Wild or Wild Draw Four (the cards that can be played on anything). Coloured cards — including Draw Two, Skip, Reverse, and number cards — are all valid finishers." },
         { "id": "extras.seven_zero", "text": "7-0 rule: playing a 7 swaps hands with a chosen player; playing a 0 rotates all hands in the direction of play. Edge case: if a 0 or 7 is played as your last card, the person who would claim the now-empty hand wins instead — no gifting the win to a friend." },
