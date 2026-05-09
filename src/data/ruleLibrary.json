@@ -1,0 +1,106 @@
+{
+  "categories": [
+    {
+      "id": "firstplayer",
+      "heading": "Who goes first",
+      "exclusive": true,
+      "accentColor": "yellow",
+      "options": [
+        { "id": "firstplayer.left_of_dealer", "text": "Player to the dealer's left goes first (official)." },
+        { "id": "firstplayer.last_winner", "text": "The winner of the previous hand goes first. For the very first hand of the session, fall back to dealer's left." },
+        { "id": "firstplayer.highest_in_hand", "text": "After dealing, whoever holds the highest single number card in their hand goes first. Action cards count as 0; resolve ties by re-checking second-highest, then dealer's left." }
+      ]
+    },
+    {
+      "id": "draw",
+      "heading": "Drawing when you can't play",
+      "exclusive": true,
+      "accentColor": "red",
+      "options": [
+        { "id": "draw.skip", "text": "Draw one and skip your turn." },
+        { "id": "draw.peek_play", "text": "Draw one, play it immediately if possible, otherwise skip." },
+        { "id": "draw.until_playable", "text": "Draw until you get a playable card." }
+      ]
+    },
+    {
+      "id": "stacking",
+      "heading": "Stacking draw cards",
+      "exclusive": true,
+      "accentColor": "yellow",
+      "options": [
+        { "id": "stacking.off", "text": "Off: Draw Twos and Wild Draw Fours take effect immediately; the targeted player cannot defend (official)." },
+        { "id": "stacking.plus2_only", "text": "Stack +2 on +2 only (any colour). The count accumulates and passes until someone can't defend." },
+        { "id": "stacking.plus2_and_plus4", "text": "Stack +2 on +2 and +4 on +4 (any colour, but within their own card type)." },
+        { "id": "stacking.any_on_any", "text": "Cross-type stacking: also allow +2 on +4 and +4 on +2 (chaos mode)." }
+      ]
+    },
+    {
+      "id": "wd4",
+      "heading": "Wild Draw Four restriction",
+      "exclusive": true,
+      "accentColor": "green",
+      "options": [
+        { "id": "wd4.restricted", "text": "May only be played if you have no matching colour. Opponent may challenge — caught cheating draws 4, wrong challenge draws 6 (official)." },
+        { "id": "wd4.unrestricted", "text": "No restriction, no challenge — play it whenever." }
+      ]
+    },
+    {
+      "id": "mustplay",
+      "heading": "Must you play if you can?",
+      "exclusive": true,
+      "accentColor": "blue",
+      "options": [
+        { "id": "mustplay.required", "text": "Must play a card if you have one playable (official)." },
+        { "id": "mustplay.optional", "text": "You may choose to draw even when you can play." }
+      ]
+    },
+    {
+      "id": "afterdraw",
+      "heading": "After you're forced to draw (+2 / +4)",
+      "exclusive": true,
+      "accentColor": "blue",
+      "options": [
+        { "id": "afterdraw.skip", "text": "You draw the cards and lose your turn (official)." },
+        { "id": "afterdraw.continue", "text": "You draw the cards, then your turn continues exactly as if you'd just begun a normal turn — you may play any playable card from your hand, or (if the must-play rule allows it) choose not to play and end your turn." }
+      ]
+    },
+    {
+      "id": "scoring",
+      "heading": "How you win the game",
+      "exclusive": true,
+      "accentColor": "green",
+      "options": [
+        { "id": "scoring.points", "text": "Points-based (official): the winner of each hand scores opponents' remaining cards. Number cards = face value; Skip / Reverse / Draw Two = 20 each; Wild / Wild Draw Four = 50 each. First to 500 points wins the game." },
+        { "id": "scoring.wins", "text": "Wins-based: ignore points entirely. Just track who wins each hand. First to 3 hand wins wins the game." }
+      ]
+    },
+    {
+      "id": "unopenalty",
+      "heading": "Penalty for forgetting to call \"Uno\"",
+      "exclusive": true,
+      "accentColor": "red",
+      "options": [
+        { "id": "unopenalty.off", "text": "No penalty." },
+        { "id": "unopenalty.2_window", "text": "Draw 2 cards, but only if called out before the next player plays their card (official)." },
+        { "id": "unopenalty.2_anytime", "text": "Draw 2 cards, callable at any point in the hand (even much later)." }
+      ]
+    },
+    {
+      "id": "extras",
+      "heading": "House rules & toggles",
+      "exclusive": false,
+      "accentColor": "red",
+      "options": [
+        { "id": "extras.no_wild_finish", "text": "No-Wild finish: you cannot win the hand by playing a colourless card as your last card. No finishing on a Wild or Wild Draw Four (the cards that can be played on anything). Coloured cards — including Draw Two, Skip, Reverse, and number cards — are all valid finishers." },
+        { "id": "extras.seven_zero", "text": "7-0 rule: playing a 7 swaps hands with a chosen player; playing a 0 rotates all hands in the direction of play. Edge case: if a 0 or 7 is played as your last card, the person who would claim the now-empty hand wins instead — no gifting the win to a friend." },
+        { "id": "extras.jump_in", "text": "Jump-in: if you hold a card identical in colour AND number to the top discard, you may play it out of turn. Play then continues from the player who jumped in (everyone in between is skipped)." },
+        { "id": "extras.double_plays", "text": "Double plays: if you have two of the same number in different colours, you can play them together. Yes, this gives you a god complex." },
+        { "id": "extras.slap_on_six", "text": "Slap on Six (a.k.a. Slappy Sixes / Slap Card): when a 6 is played, all players race to slap the discard pile; the last to slap draws 2 penalty cards. (Semi-official — appears in Uno Flash as \"Slap Card\".)" },
+        { "id": "extras.stack_skip_reverse", "text": "Stacking Skip/Reverse: playing a Skip or Reverse on the same forces the next player to skip too." },
+        { "id": "extras.bluff_plus4", "text": "Bluff +4: opponent must guess if you're allowed to play it; no peek." },
+        { "id": "extras.skip_n_flip", "text": "Skip n' Flip: when facing a Draw Two or Wild Draw Four, you may play a Skip card to pass the effect to the next player, or a Reverse card to bounce the effect back to the attacker." },
+        { "id": "extras.mercy", "text": "Mercy (Uno Show 'Em No Mercy): if a player ever holds 25 or more cards, they are eliminated from the game." }
+      ]
+    }
+  ]
+}

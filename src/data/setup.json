@@ -1,0 +1,65 @@
+{
+  "title": "UNO — How to Play",
+  "sections": [
+    {
+      "id": "object",
+      "heading": "Object",
+      "items": [
+        "Be the first to score 500 points by being the first to get rid of all your cards each hand."
+      ]
+    },
+    {
+      "id": "players_deck",
+      "heading": "Players & Deck",
+      "items": [
+        "2 to 10 players (ages 7+).",
+        "108-card deck: 4 colours (Red / Yellow / Green / Blue), each with one 0, two each of 1–9, two Skip, two Reverse, two Draw Two; plus 4 Wild and 4 Wild Draw Four."
+      ]
+    },
+    {
+      "id": "dealing",
+      "heading": "Dealing",
+      "items": [
+        "Each player draws a card; highest deals (action cards count as 0).",
+        "Dealer shuffles and deals 7 cards each.",
+        "Remaining cards form the Draw Pile; flip the top card to start the Discard Pile.",
+        "First-card specials — Wild: dealer chooses colour. Wild Draw Four: return to deck and pick another. Draw Two: first player draws 2 and skips. Reverse: play starts with dealer. Skip: first player loses turn.",
+        "Who goes first is configurable in the rule library (default: player to the dealer's left)."
+      ]
+    },
+    {
+      "id": "playing",
+      "heading": "How to play a card",
+      "items": [
+        "On your turn, play one card matching the top discard by colour, number, or symbol — or play a Wild."
+      ]
+    },
+    {
+      "id": "action_cards",
+      "heading": "Action Cards",
+      "items": [
+        "Reverse — reverse direction. In a 2-player game, acts as a Skip.",
+        "Skip — next player loses their turn.",
+        "Draw Two — next player draws 2 and loses their turn.",
+        "Wild — change the colour of play; may be played on any turn even if you have other playable cards.",
+        "Wild Draw Four — change colour AND next player draws 4 and loses their turn."
+      ]
+    },
+    {
+      "id": "calling_uno",
+      "heading": "Calling \"UNO\"",
+      "items": [
+        "When you play your second-to-last card, yell \"UNO!\". The penalty for forgetting is configurable in the rule library."
+      ]
+    },
+    {
+      "id": "scoring",
+      "heading": "Scoring (points reference)",
+      "items": [
+        "How you win is configurable in the rule library (default: points).",
+        "When using points scoring, the winner of each hand scores all opponents' remaining cards: number cards = face value; Draw Two / Reverse / Skip = 20 each; Wild / Wild Draw Four = 50 each. First to 500 points wins.",
+        "When using wins-based scoring, just count hand wins."
+      ]
+    }
+  ]
+}

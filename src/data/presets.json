@@ -1,0 +1,32 @@
+{
+  "official": {
+    "id": "official",
+    "name": "Official Mattel Rules",
+    "selectedIds": [
+      "firstplayer.left_of_dealer",
+      "draw.peek_play",
+      "stacking.off",
+      "wd4.restricted",
+      "mustplay.required",
+      "afterdraw.skip",
+      "scoring.points",
+      "unopenalty.2_window"
+    ]
+  },
+  "nejas": {
+    "id": "nejas",
+    "name": "Neja's House Rules",
+    "selectedIds": [
+      "firstplayer.last_winner",
+      "draw.peek_play",
+      "stacking.plus2_and_plus4",
+      "wd4.unrestricted",
+      "mustplay.optional",
+      "afterdraw.continue",
+      "scoring.wins",
+      "unopenalty.2_window",
+      "extras.no_wild_finish",
+      "extras.jump_in"
+    ]
+  }
+}
