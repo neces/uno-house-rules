@@ -56,7 +56,7 @@ export function Tabs({
       aria-label="Tabs"
       className="no-print sticky top-0 z-20 bg-paper/90 backdrop-blur-sm border-b-2 border-ink/10"
     >
-      <ul className="no-scrollbar flex gap-3 sm:gap-4 overflow-x-auto px-3 sm:px-6 pt-3 sm:pt-4 pb-8 sm:pb-9 snap-x snap-mandatory md:justify-center after:content-[''] after:shrink-0 after:w-3 sm:after:w-6 md:after:hidden">
+      <ul className="no-scrollbar flex gap-3 sm:gap-4 overflow-x-auto px-3 sm:px-6 pt-3 sm:pt-4 pb-8 sm:pb-9 snap-x snap-mandatory md:justify-center">
         {TABS.map(tab => {
           const isActive = tab.id === active;
           return (
