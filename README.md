@@ -1,17 +1,17 @@
 # UNO House Rules
 
-A static, mobile-first React SPA for picking, customising, printing and PNG-exporting your favourite UNO house rules. Settle the family arguments by *committing your rules to a printed page* — like a sane person.
+A static, mobile-first React SPA for picking, customising, printing and PNG-exporting your favourite UNO house rules. Settle the family arguments by *committing your rules to a printed page*, and ideally laminate it as well.
 
 Four tabs, one master rule library:
 
-- **Setup** — the static stuff (deck composition, dealing, action card meanings, scoring).
-- **Official** — Mattel's canonical rule set, ticked from the master library.
-- **Neja's** — the chill, strategic house variant.
-- **Custom** — start from Official, tick / untick anything, add your own rules. Auto-saves to `sessionStorage`.
+- **Setup** — Setup and main objectives (deck composition, dealing, action card meanings, scoring).
+- **Official** — Official rule set.
+- **Neja's** — Rules I force my friends to play, strategic but fast paced.
+- **Custom** — start from Official or Neja's, change anything, add your own rules. Auto-saves to `sessionStorage`.
 
 Both export buttons live on every tab:
 
-- **PNG** — generates a poster-quality image (always rendered at 880px wide so phone exports look as good as desktop ones).
+- **PNG** — generates a poster-quality image (rendered at 880px).
 - **Print** — opens the browser print dialog so you can pin a copy to the fridge or save as PDF.
 
 ## Stack
@@ -70,7 +70,6 @@ src/
 ## Out of scope (by design)
 
 - No login, no cloud sync, no shareable links.
-- No drag-to-reorder rules in v1.
-- Custom selections clear when you close the tab. Use PNG / Print to immortalise a rule sheet you love.
+- Custom selections clear when you close the tab. Use PNG/Print to immortalise a rule sheet you love.
 
-Built with whimsy. Long live UNO chaos.
+Long live (organised) UNO chaos.
