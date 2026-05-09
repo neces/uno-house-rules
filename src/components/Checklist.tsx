@@ -51,16 +51,17 @@ export function Checklist({
   const handleToggle = (category: RuleCategory, optionId: string) => {
     if (!onChange) return;
     const isSelected = selectedSet.has(optionId);
+    if (category.exclusive && isSelected) {
+      return;
+    }
     let next: string[];
     if (category.exclusive) {
-      // Single-select: deselect any other option in this category and select this one.
-      // If clicking the already-selected option, untick it.
       const allOptionIdsInCategory = new Set([
         ...category.options.map(o => o.id),
         ...(customOptions?.[category.id]?.map(o => o.id) ?? []),
       ]);
       const filtered = selectedIds.filter(id => !allOptionIdsInCategory.has(id));
-      next = isSelected ? filtered : [...filtered, optionId];
+      next = [...filtered, optionId];
     } else {
       // Multi-select: toggle independently
       next = isSelected
@@ -81,7 +82,12 @@ export function Checklist({
         const headerAccent = ACCENT_HEADER[category.accentColor];
 
         return (
-          <section key={category.id} aria-labelledby={`cat-${category.id}`} className="rule-category">
+          <section
+            key={category.id}
+            data-category={category.id}
+            aria-labelledby={`cat-${category.id}`}
+            className="rule-category"
+          >
             <header className="mb-4 sm:mb-5 flex items-start gap-x-3 gap-y-2 flex-wrap">
               <h2
                 id={`cat-${category.id}`}
@@ -103,11 +109,17 @@ export function Checklist({
 
             <ul className="grid grid-cols-1 gap-3">
               {allOptions.map(option => (
-                <li key={option.id}>
+                <li
+                  key={option.id}
+                  data-rule-selected={selectedSet.has(option.id) ? 'true' : 'false'}
+                >
                   <RuleOptionCard
                     option={option}
                     selected={selectedSet.has(option.id)}
                     accent={category.accentColor}
+                    lockSelected={
+                      category.exclusive && selectedSet.has(option.id)
+                    }
                     onToggle={
                       editable ? () => handleToggle(category, option.id) : undefined
                     }
@@ -163,7 +175,7 @@ function AddOptionRow({
   return (
     <div
       className={[
-        'mt-4 w-full rounded-2xl border-2 bg-paper/80 px-4 py-3 sm:px-5 sm:py-4',
+        'no-print mt-4 w-full rounded-2xl border-2 bg-paper/80 px-4 py-3 sm:px-5 sm:py-4',
         'min-h-[56px] flex items-start gap-3',
         accentBorder,
       ].join(' ')}
@@ -184,7 +196,7 @@ function AddOptionRow({
             }
           }}
           placeholder={placeholder}
-          className="flex-1 min-h-[44px] w-full px-3 py-2 rounded-md border-2 border-dashed border-ink-muted/45 bg-paper/60 placeholder:text-ink-muted/70 focus:outline-none focus:border-ink/55 focus:bg-paper text-ink text-base sm:text-lg font-hand"
+          className="flex-1 min-h-[44px] w-full px-3 py-2 rounded-md border-2 border-dashed border-ink-muted/45 bg-paper/60 placeholder:text-ink-muted/70 focus:outline-none focus:border-ink/55 focus:bg-paper text-ink text-base sm:text-lg font-body"
         />
         <button
           type="button"

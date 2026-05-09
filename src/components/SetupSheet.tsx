@@ -52,7 +52,7 @@ export function SetupSheet({ content }: { content: SetupContent }) {
                 {section.heading}
               </h2>
             </header>
-            <ul className="space-y-3 sm:space-y-4 text-ink font-hand text-base sm:text-lg leading-snug">
+            <ul className="space-y-3 sm:space-y-4 text-ink font-body text-base sm:text-lg leading-snug">
               {section.items.map((item, i) => {
                 const itemDot = nextBulletBg();
                 return (

@@ -85,13 +85,6 @@ export function CustomPage() {
 
   const handleReset = (which: 'official' | 'nejas') => {
     const target = allPresets[which];
-    if (
-      !confirm(
-        `Reset selections to ${target.name}? Your custom-added options will be kept (just unticked) so you can reuse them.`,
-      )
-    ) {
-      return;
-    }
     setState(prev => ({
       ...prev,
       selectedIds: target.selectedIds,

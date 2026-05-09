@@ -35,6 +35,15 @@ export function ExportBar({ targetRef, filenameSlug }: ExportBarProps) {
     host.appendChild(clone);
     document.body.appendChild(host);
 
+    clone.querySelectorAll('[data-rule-selected="false"]').forEach(el => el.remove());
+    clone.querySelectorAll('.no-print').forEach(el => el.remove());
+    clone.querySelectorAll('section header .stamp').forEach(el => el.remove());
+    clone.querySelectorAll('section[data-category="extras"]').forEach(section => {
+      if (!section.querySelector('li')) {
+        section.remove();
+      }
+    });
+
     try {
       const dataUrl = await toPng(host, {
         pixelRatio: 2,

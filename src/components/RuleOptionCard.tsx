@@ -39,6 +39,8 @@ export type RuleOptionCardProps = {
   option: RuleOption;
   selected: boolean;
   accent: AccentColor;
+  /** Exclusive categories: current pick cannot be cleared by re-clicking. */
+  lockSelected?: boolean;
   /** When omitted the card is rendered as read-only (visible state, no interactivity). */
   onToggle?: () => void;
   /** Only used when option.isUserAdded === true and the card is in editable mode. */
@@ -50,6 +52,7 @@ export function RuleOptionCard({
   option,
   selected,
   accent,
+  lockSelected = false,
   onToggle,
   onEdit,
   onDelete,
@@ -67,11 +70,6 @@ export function RuleOptionCard({
   useEffect(() => {
     if (editing) inputRef.current?.focus();
   }, [editing]);
-
-  // Keep local draft in sync if option text changes externally
-  useEffect(() => {
-    if (!editing) setDraft(option.text);
-  }, [option.text, editing]);
 
   const commitEdit = () => {
     const trimmed = draft.trim();
@@ -91,27 +89,38 @@ export function RuleOptionCard({
       ? `${accentClasses.bg} ${accentClasses.border} text-paper shadow-[4px_4px_0_rgba(0,0,0,0.18)] -rotate-[1deg]`
       : `bg-paper/80 ${accentClasses.border} text-ink-soft`,
     interactive
-      ? selected
-        ? 'cursor-pointer hover:shadow-[6px_6px_0_rgba(0,0,0,0.22)]'
-        : 'cursor-pointer hover:bg-paper hover:-rotate-[1.5deg] hover:shadow-[3px_3px_0_rgba(0,0,0,0.12)]'
+      ? selected && lockSelected
+        ? 'cursor-default'
+        : selected
+          ? 'cursor-pointer hover:shadow-[6px_6px_0_rgba(0,0,0,0.22)]'
+          : 'cursor-pointer hover:bg-paper hover:-rotate-[1.5deg] hover:shadow-[3px_3px_0_rgba(0,0,0,0.12)]'
       : 'cursor-default',
   ].join(' ');
+
+  const checkboxLocked = lockSelected && selected;
 
   return (
     <div className={baseClass}>
       {/* Checkbox glyph */}
       <button
         type="button"
-        onClick={interactive && !editing ? onToggle : undefined}
+        onClick={interactive && !editing && !checkboxLocked ? onToggle : undefined}
         disabled={!interactive || editing}
         aria-pressed={selected}
-        aria-label={selected ? 'Untick' : 'Tick'}
+        aria-disabled={checkboxLocked ? true : undefined}
+        aria-label={
+          checkboxLocked
+            ? 'Selected rule'
+            : selected
+              ? 'Untick'
+              : 'Tick'
+        }
         className={[
-          'shrink-0 mt-[2px] grid place-items-center w-7 h-7 rounded-md border-2 transition-colors',
+          'no-print shrink-0 mt-[2px] grid place-items-center w-7 h-7 rounded-md border-2 transition-colors',
           selected
             ? 'bg-paper text-ink border-paper'
             : `text-ink-muted bg-paper/40 ${accentClasses.border}`,
-          interactive && !editing
+          interactive && !editing && !checkboxLocked
             ? 'cursor-pointer'
             : 'cursor-default',
         ].join(' ')}
@@ -133,7 +142,9 @@ export function RuleOptionCard({
       {/* Text body — clickable region equals checkbox */}
       <div
         className="flex-1 min-w-0"
-        onClick={interactive && !editing ? onToggle : undefined}
+        onClick={
+          interactive && !editing && !checkboxLocked ? onToggle : undefined
+        }
       >
         {editing ? (
           <textarea
@@ -156,7 +167,7 @@ export function RuleOptionCard({
         ) : (
           <p
             className={[
-              'font-hand text-base sm:text-lg leading-snug whitespace-pre-wrap',
+              'font-body text-base sm:text-lg leading-snug whitespace-pre-wrap',
               selected ? 'text-paper' : 'text-ink',
             ].join(' ')}
           >
@@ -183,6 +194,7 @@ export function RuleOptionCard({
               type="button"
               onClick={e => {
                 e.stopPropagation();
+                setDraft(option.text);
                 setEditing(true);
               }}
               aria-label="Edit"

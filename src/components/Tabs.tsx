@@ -57,7 +57,7 @@ export function Tabs({
       className="no-print bg-paper/90 backdrop-blur-sm border-b-2 border-ink/10"
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <ul className="no-scrollbar flex gap-3 sm:gap-4 overflow-x-auto pt-3 sm:pt-4 pb-8 sm:pb-9 snap-x snap-mandatory justify-start">
+        <ul className="no-scrollbar flex items-end gap-3 sm:gap-4 overflow-x-auto overflow-y-visible pt-3 sm:pt-4 pb-6 sm:pb-7 scroll-pb-2 snap-x snap-mandatory justify-start">
           {TABS.map(tab => {
             const isActive = tab.id === active;
             return (
@@ -82,12 +82,12 @@ export function Tabs({
                     aria-hidden
                     className="absolute inset-1.5 rounded-md bg-paper/95 -rotate-[12deg]"
                   />
-                <span
-                  className={[
-                    'relative z-10 font-zine text-[1.25rem] sm:text-[1.4rem] leading-none',
-                    tab.glyphClass,
-                  ].join(' ')}
-                >
+                  <span
+                    className={[
+                      'relative z-10 font-zine text-[1.25rem] sm:text-[1.4rem] leading-none',
+                      tab.glyphClass,
+                    ].join(' ')}
+                  >
                     {tab.glyph}
                   </span>
                   <span className="absolute z-10 left-1/2 -translate-x-1/2 -bottom-5 font-marker text-xs sm:text-sm text-ink whitespace-nowrap">
