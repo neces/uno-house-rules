@@ -32,7 +32,7 @@ const TABS: TabSpec[] = [
     glyph: 'N',
     bg: 'bg-uno-yellow',
     text: 'text-uno-black',
-    border: 'border-uno-yellow-deep',
+    border: 'border-uno-black',
   },
   {
     id: 'custom',

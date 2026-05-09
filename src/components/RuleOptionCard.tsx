@@ -15,7 +15,7 @@ const ACCENT: Record<
   yellow: {
     bg: 'bg-uno-yellow',
     border: 'border-uno-yellow',
-    text: 'text-uno-yellow-deep',
+    text: 'text-uno-yellow',
     ring: 'ring-uno-yellow/40',
     soft: 'bg-uno-yellow/10',
   },
@@ -110,7 +110,7 @@ export function RuleOptionCard({
           'shrink-0 mt-[2px] grid place-items-center w-7 h-7 rounded-md border-2 transition-colors',
           selected
             ? 'bg-paper text-ink border-paper'
-            : `${accentClasses.text} bg-paper/40 ${accentClasses.border}`,
+            : `text-ink-muted bg-paper/40 ${accentClasses.border}`,
           interactive && !editing
             ? 'cursor-pointer'
             : 'cursor-default',

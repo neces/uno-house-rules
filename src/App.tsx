@@ -14,9 +14,9 @@ export default function App() {
       <header className="no-print pt-6 sm:pt-10 pb-2 sm:pb-4 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto flex items-end justify-between gap-4">
           <div>
-            <h1 className="zine-title text-[clamp(2.5rem,10vw,5rem)] leading-none">
+            <h1 className="zine-title text-[clamp(2.5rem,10vw,5rem)] leading-none [text-shadow:3px_3px_0_var(--color-uno-black)]">
               <span className="inline-block text-uno-red -rotate-[3deg]">U</span>
-              <span className="inline-block text-uno-yellow-deep">N</span>
+              <span className="inline-block text-uno-yellow">N</span>
               <span className="inline-block text-uno-green rotate-[3deg]">O</span>
             </h1>
             <p className="font-marker text-ink-soft tracking-wide mt-1">

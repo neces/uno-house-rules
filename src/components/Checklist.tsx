@@ -11,7 +11,7 @@ const ACCENT_HEADER: Record<
   { dot: string; stamp: string }
 > = {
   red: { dot: 'bg-uno-red', stamp: 'text-uno-red border-uno-red' },
-  yellow: { dot: 'bg-uno-yellow', stamp: 'text-uno-yellow-deep border-uno-yellow-deep' },
+  yellow: { dot: 'bg-uno-yellow', stamp: 'text-uno-yellow border-uno-yellow [text-shadow:1px_1px_0_var(--color-uno-black)]' },
   green: { dot: 'bg-uno-green', stamp: 'text-uno-green border-uno-green' },
   blue: { dot: 'bg-uno-blue', stamp: 'text-uno-blue border-uno-blue' },
 };
