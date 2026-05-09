@@ -9,8 +9,8 @@ export function SetupSheet({ content }: { content: SetupContent }) {
         const dot = ACCENTS[idx % ACCENTS.length];
         return (
           <section key={section.id} aria-labelledby={`setup-${section.id}`}>
-            <header className="mb-3 flex items-baseline gap-3 flex-wrap">
-              <span aria-hidden className={`inline-block w-3 h-3 rounded-full ${dot} -mb-1`} />
+            <header className="mb-3 flex items-center gap-3 flex-wrap">
+              <span aria-hidden className={`shrink-0 w-3 h-3 rounded-full ${dot}`} />
               <h2
                 id={`setup-${section.id}`}
                 className="zine-title wobble-underline text-2xl sm:text-3xl text-ink"
@@ -22,10 +22,10 @@ export function SetupSheet({ content }: { content: SetupContent }) {
               {section.items.map((item, i) => {
                 const dotColour = ACCENTS[i % ACCENTS.length];
                 return (
-                  <li key={i} className="flex gap-3 sm:gap-4">
+                  <li key={i} className="flex items-start gap-3 sm:gap-4">
                     <span
                       aria-hidden
-                      className={`mt-2 shrink-0 w-2.5 h-2.5 rounded-full ${dotColour}`}
+                      className={`shrink-0 w-2.5 h-2.5 rounded-full ${dotColour} translate-y-[0.55em]`}
                     />
                     <span className="flex-1">{item}</span>
                   </li>

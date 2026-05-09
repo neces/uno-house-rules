@@ -74,10 +74,10 @@ export function Checklist({
 
         return (
           <section key={category.id} aria-labelledby={`cat-${category.id}`} className="rule-category">
-            <header className="mb-4 sm:mb-5 flex items-baseline gap-3 flex-wrap">
+            <header className="mb-4 sm:mb-5 flex items-center gap-3 flex-wrap">
               <span
                 aria-hidden
-                className={`inline-block w-3 h-3 rounded-full ${headerAccent.dot} -mb-1`}
+                className={`shrink-0 w-3 h-3 rounded-full ${headerAccent.dot}`}
               />
               <h2
                 id={`cat-${category.id}`}
