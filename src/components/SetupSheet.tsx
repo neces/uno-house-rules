@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import type { SetupContent } from '../types/rules';
 
 /** Cycle through the four Uno colours so consecutive bullets never match. */
@@ -9,7 +9,7 @@ const BULLET_BG_CYCLE = [
   'bg-uno-blue',
 ] as const;
 
-/** Holds one shuffled permutation between Setup mounts (Strict Mode–safe). */
+/** Holds one shuffled permutation for this SPA load (Strict Mode–safe: survives dev double-mount). */
 let bulletPermutationCache: string[] | null = null;
 
 function takeShuffledBulletCycle(): readonly string[] {
@@ -28,12 +28,6 @@ function takeShuffledBulletCycle(): readonly string[] {
 
 export function SetupSheet({ content }: { content: SetupContent }) {
   const cycle = useMemo(() => takeShuffledBulletCycle(), []);
-
-  useEffect(() => {
-    return () => {
-      bulletPermutationCache = null;
-    };
-  }, []);
 
   /** Running index: section heading dots and every list bullet share one sequence top-to-bottom. */
   let bulletOrdinal = 0;
