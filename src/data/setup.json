@@ -13,25 +13,7 @@
       "heading": "Players & Deck",
       "items": [
         "2 to 10 players",
-        "108-card deck: 4 colours (Red, Yellow, Green, Blue), each with one 0, two each of 1–9, two Skip, two Reverse, two Draw Two; plus 4 Wild and 4 Wild Draw Four"
-      ]
-    },
-    {
-      "id": "dealing",
-      "heading": "Dealing",
-      "items": [
-        "Each player draws a card; highest deals (action cards count as 0). Or just pick a dealer randomly",
-        "Dealer shuffles and deals 7 cards each",
-        "Remaining cards form the Draw Pile; flip the top card to start the Discard Pile",
-        "First-card specials — Wild: dealer chooses colour. Wild Draw Four: return to deck and pick another. Draw Two: first player draws 2 and skips. Reverse: play starts with dealer. Skip: first player loses turn. Or you could also ignore all special cards until and discard a normal card",
-        "Who goes first is configurable in the rule library (officialy: player to the dealer's left)."
-      ]
-    },
-    {
-      "id": "playing",
-      "heading": "How to play a card",
-      "items": [
-        "On your turn, play one card matching the top discard by colour, number, or symbol — or play a Wild"
+        "108-card deck: 4 colours (red, yellow, green, blue), each with one 0, two each of 1–9, two Skip, two Reverse, two Draw Two; plus 4 Wild and 4 Wild Draw Four"
       ]
     },
     {
@@ -46,6 +28,24 @@
       ]
     },
     {
+      "id": "dealing",
+      "heading": "Dealing",
+      "items": [
+        "Each player draws a card; highest deals (action cards count as 0). Or just pick a dealer randomly",
+        "Dealer shuffles and deals 7 cards each",
+        "Remaining cards form the Draw Pile; flip the top card to start the Discard Pile",
+        "First-card specials — Wild: dealer chooses colour. Wild Draw Four: return to deck and pick another. Draw Two: first player draws 2 and skips. Reverse: play starts with dealer. Skip: first player loses turn. Or you could also ignore all special cards until and discard a normal card",
+        "Who goes first is configurable in the rule library"
+      ]
+    },
+    {
+      "id": "playing",
+      "heading": "How to play a card",
+      "items": [
+        "On your turn, play one card matching the top discard by colour, number, or symbol — or play a Wild"
+      ]
+    },
+    {
       "id": "calling_uno",
       "heading": "Calling \"UNO\"",
       "items": [
@@ -56,7 +56,7 @@
       "id": "scoring",
       "heading": "Scoring",
       "items": [
-        "How you win is configurable in the rule library (default: points)",
+        "How you win is configurable in the rule library",
         "When using points scoring, the winner of each hand scores all opponents' remaining cards (number cards are worth their face value; Draw Two/Reverse/Skip = 20 each; Wild/Wild Draw Four = 50 each); first to 500 points wins",
         "When using wins-based scoring, just count rounds won"
       ]

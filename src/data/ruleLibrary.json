@@ -65,16 +65,6 @@
       ]
     },
     {
-      "id": "winning",
-      "heading": "Winning",
-      "exclusive": true,
-      "accentColor": "green",
-      "options": [
-        { "id": "scoring.points", "text": "Points-based: the winner of each hand scores opponents' remaining cards. First to 500 points wins the game" },
-        { "id": "scoring.wins", "text": "Wins-based: ignore points entirely. Just track who wins each hand. First to 3 hand wins wins the game" }
-      ]
-    },
-    {
       "id": "unopenalty",
       "heading": "Penalty for forgetting to call \"Uno\"",
       "exclusive": true,
@@ -83,6 +73,16 @@
         { "id": "unopenalty.off", "text": "No penalty" },
         { "id": "unopenalty.2_window", "text": "Draw 2 cards, but only if called out before the next player plays their card" },
         { "id": "unopenalty.2_anytime", "text": "Draw 2 cards, callable at any point" }
+      ]
+    },
+    {
+      "id": "winning",
+      "heading": "Winning",
+      "exclusive": true,
+      "accentColor": "green",
+      "options": [
+        { "id": "scoring.points", "text": "Points-based: the winner of each hand scores opponents' remaining cards. First to 500 points wins the game" },
+        { "id": "scoring.wins", "text": "Wins-based: ignore points entirely. Just track who wins each hand. First to 3 hand wins wins the game" }
       ]
     },
     {
