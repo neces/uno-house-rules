@@ -102,18 +102,20 @@ export function CustomPage() {
     <>
       <div ref={sheetRef} className="rule-sheet print-keep-colour">
         <header className="mb-8 sm:mb-10">
-          <input
-            type="text"
-            value={state.title}
-            onChange={e =>
-              setState(prev => ({ ...prev, title: e.target.value }))
-            }
-            placeholder="Custom Rules"
-            aria-label="Sheet title"
-            className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-green leading-none w-full bg-transparent outline-none placeholder:text-uno-green/40 focus:bg-paper/60 rounded-md px-1 -mx-1"
-          />
+          <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-green">
+            <input
+              type="text"
+              value={state.title}
+              onChange={e =>
+                setState(prev => ({ ...prev, title: e.target.value }))
+              }
+              placeholder="Custom Rules"
+              aria-label="Sheet title"
+              className="block w-full min-w-0 bg-transparent font-inherit text-inherit tracking-inherit leading-[0.95] m-0 border-0 p-0 shadow-none outline-none appearance-none rounded-none caret-uno-green placeholder:text-uno-green/40 focus-visible:bg-paper/60 focus-visible:rounded-md [field-sizing:content]"
+            />
+          </h1>
           <p className="mt-2 font-marker text-ink-soft tracking-wide">
-            Tweak the master library to your heart's content. Auto-saves for the session.
+            Make your own rules, pick a good name. Auto-saves for the session.
           </p>
 
           {/* Reset controls — hidden from print/export */}

@@ -14,11 +14,11 @@ export function NejasPage() {
     <>
       <div ref={sheetRef} className="rule-sheet print-keep-colour">
         <header className="mb-8 sm:mb-10">
-          <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-blue leading-none">
+          <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-blue">
             {preset.name}
           </h1>
           <p className="mt-2 font-marker text-ink-soft tracking-wide">
-            The chill, strategic house variant.
+            Rules I force my friends to play, strategic but fast paced.
           </p>
         </header>
         <Checklist library={lib} selectedIds={preset.selectedIds} />

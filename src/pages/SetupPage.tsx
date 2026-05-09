@@ -12,7 +12,7 @@ export function SetupPage() {
     <>
       <div ref={sheetRef} className="rule-sheet print-keep-colour">
         <header className="mb-8 sm:mb-10">
-          <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-red leading-none">
+          <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-yellow">
             {content.title}
           </h1>
           <p className="mt-2 font-marker text-ink-soft tracking-wide">

@@ -62,13 +62,20 @@ export function ExportBar({ targetRef, filenameSlug }: ExportBarProps) {
   return (
     <div
       className={[
-        'no-print',
-        // Sticky to viewport bottom across all sizes
-        'fixed bottom-0 left-0 right-0 z-30',
-        'pb-safe',
+        'no-print fixed z-30 pb-safe',
+        // Narrow: full-width strip; wide: floating bottom-right overlay
+        'bottom-0 left-0 right-0 w-full',
+        'lg:left-auto lg:right-6 lg:bottom-6 lg:w-max lg:max-w-[min(100vw-1.5rem,100%)]',
       ].join(' ')}
     >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex items-center justify-end gap-3 bg-paper/95 backdrop-blur-sm border-t-2 border-ink/10">
+      <div
+        className={[
+          'flex items-center justify-end gap-3',
+          'w-full lg:w-auto px-4 sm:px-6 py-3 md:py-4',
+          'bg-paper/95 backdrop-blur-sm border-t-2 border-ink/10',
+          'lg:rounded-xl lg:border-2 lg:border-ink/10 lg:py-3 lg:shadow-[4px_4px_0_rgba(0,0,0,0.12)]',
+        ].join(' ')}
+      >
         <button
           type="button"
           onClick={handleDownload}

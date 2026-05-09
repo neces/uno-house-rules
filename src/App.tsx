@@ -6,7 +6,6 @@ import { NejasPage } from './pages/NejasPage';
 import { CustomPage } from './pages/CustomPage';
 
 export default function App() {
-  // Always start on Setup for a consistent first impression (per plan).
   const [tab, setTab] = useState<TabId>('setup');
 
   return (
@@ -14,13 +13,13 @@ export default function App() {
       <header className="no-print pt-6 sm:pt-10 pb-2 sm:pb-4 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto flex items-start justify-between gap-4">
           <div>
-            <h1 className="zine-title text-[clamp(2.5rem,10vw,5rem)] leading-none">
-              <span className="inline-block text-uno-red -rotate-[3deg]">U</span>
-              <span className="inline-block text-uno-yellow">N</span>
-              <span className="inline-block text-uno-green rotate-[3deg]">O</span>
+            <h1 className="zine-title text-ink text-[clamp(2.5rem,10vw,5rem)] leading-none">
+              <span className="inline-block -rotate-[3deg]">U</span>
+              <span className="inline-block">N</span>
+              <span className="inline-block rotate-[3deg]">O</span>
             </h1>
             <p className="font-marker text-ink-soft tracking-wide mt-1">
-              house rules · your way
+              house rules for fans of organised fun
             </p>
           </div>
           <div
@@ -34,7 +33,7 @@ export default function App() {
 
       <Tabs active={tab} onChange={setTab} />
 
-      <main className="flex-1 px-4 sm:px-6 pt-6 sm:pt-10 pb-28">
+      <main className="flex-1 px-4 sm:px-6 pt-6 sm:pt-10 pb-28 lg:pb-14">
         <div className="max-w-3xl mx-auto">
           {tab === 'setup' && <SetupPage />}
           {tab === 'official' && <OfficialPage />}

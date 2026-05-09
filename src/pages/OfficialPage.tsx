@@ -14,11 +14,11 @@ export function OfficialPage() {
     <>
       <div ref={sheetRef} className="rule-sheet print-keep-colour">
         <header className="mb-8 sm:mb-10">
-          <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-red leading-none">
+          <h1 className="zine-title text-[clamp(2rem,8vw,3.5rem)] text-uno-red">
             {preset.name}
           </h1>
           <p className="mt-2 font-marker text-ink-soft tracking-wide">
-            Mattel's official rule set, nicked from the master library.
+            Official rule set, as Mattel intended.
           </p>
         </header>
         <Checklist library={lib} selectedIds={preset.selectedIds} />

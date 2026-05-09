@@ -1,7 +1,7 @@
 {
   "official": {
     "id": "official",
-    "name": "Official Mattel Rules",
+    "name": "Official Rules",
     "selectedIds": [
       "firstplayer.left_of_dealer",
       "draw.peek_play",
@@ -15,7 +15,7 @@
   },
   "nejas": {
     "id": "nejas",
-    "name": "Neja's House Rules",
+    "name": "Neja's Rules",
     "selectedIds": [
       "firstplayer.last_winner",
       "draw.peek_play",
