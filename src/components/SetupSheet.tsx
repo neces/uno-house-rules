@@ -9,12 +9,15 @@ export function SetupSheet({ content }: { content: SetupContent }) {
         const dot = ACCENTS[idx % ACCENTS.length];
         return (
           <section key={section.id} aria-labelledby={`setup-${section.id}`}>
-            <header className="mb-3 flex items-center gap-3 flex-wrap">
-              <span aria-hidden className={`shrink-0 w-3 h-3 rounded-full ${dot}`} />
+            <header className="mb-3">
               <h2
                 id={`setup-${section.id}`}
                 className="zine-title wobble-underline text-2xl sm:text-3xl text-ink"
               >
+                <span
+                  aria-hidden
+                  className={`inline-block align-middle w-3 h-3 rounded-full mr-3 ${dot}`}
+                />
                 {section.heading}
               </h2>
             </header>

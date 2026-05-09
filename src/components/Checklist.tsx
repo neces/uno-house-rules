@@ -74,19 +74,19 @@ export function Checklist({
 
         return (
           <section key={category.id} aria-labelledby={`cat-${category.id}`} className="rule-category">
-            <header className="mb-4 sm:mb-5 flex items-center gap-3 flex-wrap">
-              <span
-                aria-hidden
-                className={`shrink-0 w-3 h-3 rounded-full ${headerAccent.dot}`}
-              />
+            <header className="mb-4 sm:mb-5 flex items-start gap-x-3 gap-y-2 flex-wrap">
               <h2
                 id={`cat-${category.id}`}
-                className="zine-title wobble-underline text-2xl sm:text-3xl text-ink"
+                className="zine-title wobble-underline text-2xl sm:text-3xl text-ink min-w-0"
               >
+                <span
+                  aria-hidden
+                  className={`inline-block align-middle w-3 h-3 rounded-full mr-3 ${headerAccent.dot}`}
+                />
                 {category.heading}
               </h2>
               <span
-                className={`stamp ${headerAccent.stamp}`}
+                className={`stamp ${headerAccent.stamp} self-center`}
                 aria-label={category.exclusive ? 'Pick one' : 'Pick any'}
               >
                 {category.exclusive ? 'Pick one' : 'Pick any'}
