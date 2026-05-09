@@ -91,7 +91,7 @@ export function ExportBar({ targetRef, filenameSlug }: ExportBarProps) {
         <button
           type="button"
           onClick={handlePrint}
-          className="min-h-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-md bg-uno-red text-paper border-2 border-uno-black font-marker tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.3)] hover:-rotate-1 hover:shadow-[5px_5px_0_rgba(0,0,0,0.3)] transition-all"
+          className="min-h-[44px] inline-flex items-center gap-2 px-4 py-2 rounded-md bg-paper text-ink border-2 border-uno-black font-marker tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.3)] hover:-rotate-1 hover:shadow-[5px_5px_0_rgba(0,0,0,0.3)] transition-all"
           aria-label="Print or save as PDF"
         >
           <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden>

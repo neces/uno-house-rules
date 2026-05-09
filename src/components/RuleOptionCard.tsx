@@ -127,17 +127,7 @@ export function RuleOptionCard({
               strokeLinejoin="round"
             />
           </svg>
-        ) : (
-          <svg viewBox="0 0 24 24" className="w-4 h-4 opacity-40" aria-hidden>
-            <path
-              d="M5 12 H19"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        )}
+        ) : null}
       </button>
 
       {/* Text body — clickable region equals checkbox */}

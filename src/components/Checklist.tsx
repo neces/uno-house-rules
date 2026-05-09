@@ -16,6 +16,14 @@ const ACCENT_HEADER: Record<
   blue: { dot: 'bg-uno-blue', stamp: 'text-uno-blue border-uno-blue' },
 };
 
+/** Card border class — matches `RuleOptionCard` unselected styling per category. */
+const ACCENT_CARD_BORDER: Record<RuleCategory['accentColor'], string> = {
+  red: 'border-uno-red',
+  yellow: 'border-uno-yellow',
+  green: 'border-uno-green',
+  blue: 'border-uno-blue',
+};
+
 export type ChecklistProps = {
   library: RuleLibrary;
   selectedIds: string[];
@@ -120,6 +128,7 @@ export function Checklist({
 
             {editable && onAddOption && (
               <AddOptionRow
+                accentBorder={ACCENT_CARD_BORDER[category.accentColor]}
                 onAdd={text => onAddOption(category.id, text)}
                 placeholder={
                   category.exclusive
@@ -136,9 +145,11 @@ export function Checklist({
 }
 
 function AddOptionRow({
+  accentBorder,
   onAdd,
   placeholder,
 }: {
+  accentBorder: string;
   onAdd: (text: string) => void;
   placeholder: string;
 }) {
@@ -150,28 +161,40 @@ function AddOptionRow({
     setText('');
   };
   return (
-    <div className="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch">
-      <input
-        type="text"
-        value={text}
-        onChange={e => setText(e.target.value)}
-        onKeyDown={e => {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            submit();
-          }
-        }}
-        placeholder={placeholder}
-        className="flex-1 min-h-[44px] px-3 py-2 rounded-md border-2 border-dashed border-ink-muted/50 bg-paper/50 placeholder:text-ink-muted/70 focus:outline-none focus:border-ink/60 focus:bg-paper text-ink text-base sm:text-lg"
+    <div
+      className={[
+        'mt-4 w-full rounded-2xl border-2 bg-paper/80 px-4 py-3 sm:px-5 sm:py-4',
+        'min-h-[56px] flex items-start gap-3',
+        accentBorder,
+      ].join(' ')}
+    >
+      <div
+        className="shrink-0 mt-[2px] w-7 h-7 rounded-md border-2 border-dashed border-ink-muted/40 bg-paper/40"
+        aria-hidden
       />
-      <button
-        type="button"
-        onClick={submit}
-        disabled={!text.trim()}
-        className="min-h-[44px] px-4 py-2 rounded-md bg-ink text-paper font-marker tracking-wide disabled:opacity-40 disabled:cursor-not-allowed transition-transform hover:-rotate-1"
-      >
-        + Add
-      </button>
+      <div className="flex-1 flex flex-col gap-3 min-w-0 sm:flex-row sm:items-center sm:gap-3">
+        <input
+          type="text"
+          value={text}
+          onChange={e => setText(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              submit();
+            }
+          }}
+          placeholder={placeholder}
+          className="flex-1 min-h-[44px] w-full px-3 py-2 rounded-md border-2 border-dashed border-ink-muted/45 bg-paper/60 placeholder:text-ink-muted/70 focus:outline-none focus:border-ink/55 focus:bg-paper text-ink text-base sm:text-lg font-hand"
+        />
+        <button
+          type="button"
+          onClick={submit}
+          disabled={!text.trim()}
+          className="min-h-[44px] w-full sm:w-auto shrink-0 px-4 py-2 rounded-md bg-ink text-paper font-marker tracking-wide disabled:opacity-40 disabled:cursor-not-allowed transition-transform hover:-rotate-1"
+        >
+          + Add
+        </button>
+      </div>
     </div>
   );
 }
